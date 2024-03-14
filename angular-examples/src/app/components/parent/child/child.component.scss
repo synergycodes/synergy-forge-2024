@@ -1,0 +1,9 @@
+.child {
+    &__list-content {
+        display: flex;
+    }
+
+    &__list-item-name {
+        margin-right: 20px;
+    }
+}

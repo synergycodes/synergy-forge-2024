@@ -1,0 +1,9 @@
+<div *ngIf="!numbers || numbers.length > 0; else noData">
+  <ul>
+    <li *ngFor="let item of numbers">{{ item }}</li>
+  </ul>
+</div>
+
+<ng-template #noData>
+  <div>No Data</div>
+</ng-template>

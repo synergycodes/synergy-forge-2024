@@ -9,6 +9,7 @@ import {
 
 @Directive({
   selector: '[appDate]',
+  standalone: true,
 })
 export class DateDirective implements OnInit {
   @Input()

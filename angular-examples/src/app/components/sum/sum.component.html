@@ -1,0 +1,20 @@
+<div class="container-fluid mt-2">
+    <div class="card">
+        <div class="card-header">Angular Service</div>
+        <div class="card-body">
+          <h5 class="card-title">Calculator</h5>
+          <div class="card-text">
+              <div class="form-group">
+                  <label>Enter first number</label>
+                  <input [(ngModel)]="firstNumber" type="number" class="form-control" placeholder="Enter number">
+              </div>
+              <div class="form-group">
+                  <label>Enter second number</label>
+                  <input [(ngModel)]="secondNumber" type="number" class="form-control" placeholder="Enter number">
+              </div>
+              <button class="btn btn-primary btn-sm mt-1" (click)="sumButtonClick()">Sum</button>
+              <div class="text-success font-weight-bold mt-2">Result: {{result}}</div>
+          </div>
+        </div>
+      </div>
+</div>

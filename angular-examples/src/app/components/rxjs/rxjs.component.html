@@ -1,0 +1,64 @@
+<div class="rxjs">
+  <h4>Behavior subject</h4>
+  <div class="rxjs__buttons">
+    <button type="button" (click)="onGenerate20BtnClick()" class="btn btn-info">
+      Generate 20
+    </button>
+    <button type="button" (click)="onGenerate50BtnClick()" class="btn btn-info">
+      Generate 50
+    </button>
+    <button type="button" (click)="onNextItemsBtnClick()" class="btn btn-info">
+      Generate Next 20 items
+    </button>
+    <button type="button" #getBtn class="btn btn-success">
+      Get items (multiple by 10)
+    </button>
+  </div>
+  <div class="rxjs__lists">
+    <div class="rxjs__lists--item">
+      <span class="rxjs__lists--label">All elements</span>
+      <app-list [numbers]="numbers$ | async"></app-list>
+    </div>
+    <div class="rxjs__lists--item">
+      <span class="rxjs__lists--label">Odd elements</span>
+      <app-list [numbers]="oddNumbers"></app-list>
+    </div>
+    <div class="rxjs__lists--item">
+      <span class="rxjs__lists--label"
+        >Only array with more than 20 elements</span
+      >
+      <app-list [numbers]="moreThan20"></app-list>
+    </div>
+    <div class="rxjs__lists--item">
+      <span class="rxjs__lists--label">Multiple by 10</span>
+      <app-list [numbers]="multipleBy10Numbers"></app-list>
+    </div>
+  </div>
+
+  <hr />
+
+  <h4>Subject</h4>
+
+  <div class="rxjs__buttons">
+    <button type="button" (click)="onSetValueClick()" class="btn btn-primary">
+      Init 1st value
+    </button>
+  </div>
+
+  <div class="rxjs__section">
+    Selected number (instant): {{ selectedNumber$ | async }}
+  </div>
+  <div class="rxjs__section">
+    Selected number (delayed): {{ selectedNumberDelayed }}
+  </div>
+
+  <div class="rxjs__time" *ngIf="timeToTheEnd > 1; else image">
+    Time to the end of the world {{ timeToTheEnd }}s
+  </div>
+</div>
+
+<ng-template #image>
+  <div>
+    <img alt="Boom :)" src="./assets/images/image1.png" />
+  </div>
+</ng-template>

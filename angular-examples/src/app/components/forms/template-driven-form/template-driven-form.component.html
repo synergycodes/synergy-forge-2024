@@ -1,0 +1,115 @@
+<div class="contact-form container-fluid mt-2">
+  <div class="card">
+    <div class="card-header">Contact form template driven</div>
+    <div class="card-body">
+      <div class="card-text">
+        <form (ngSubmit)="form.form.valid && onSubmit()" #form="ngForm">
+          <div class="form-group">
+            <label for="topic">Topic</label>
+            <input
+              [(ngModel)]="formData.topic"
+              #topic="ngModel"
+              type="text"
+              class="form-control"
+              id="topic"
+              name="topic"
+              placeholder="enter topic"
+              required
+            />
+            <span
+              [hidden]="topic.valid || !topic.touched"
+              class="text-danger mt-1"
+              >Field is required</span
+            >
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              [(ngModel)]="formData.message"
+              #message="ngModel"
+              type="text"
+              class="form-control"
+              id="message"
+              name="message"
+              placeholder="message"
+              required
+            >
+            </textarea>
+            <span
+              [hidden]="message.valid || !message.touched"
+              class="text-danger mt-1"
+              >Field is required</span
+            >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input
+              [(ngModel)]="formData.email"
+              #email="ngModel"
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              name="email"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              email
+            />
+            <div id="emailHelp" class="form-text text-muted">
+              We'll never share your email with anyone else.
+            </div>
+            <div
+              [hidden]="email.valid || !email.touched"
+              class="text-danger mt-1"
+            >
+              Email must be a valid email address
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="year">Year</label>
+            <input
+              [(ngModel)]="formData.year"
+              #year="ngModel"
+              type="number"
+              class="form-control"
+              id="year"
+              name="year"
+              placeholder="enter year"
+              min="2015"
+              max="2023"
+            />
+            <span
+              [hidden]="year.valid || !year.touched"
+              class="text-danger mt-1"
+              >Field is required</span
+            >
+          </div>
+          <div class="form-group">
+            <label for="category">Category</label>
+            <select
+              [(ngModel)]="formData.category"
+              #category="ngModel"
+              class="form-control"
+              name="category"
+              id="category"
+            >
+              <option *ngFor="let category of categories" [value]="category">
+                {{ category }}
+              </option>
+            </select>
+          </div>
+
+          <button
+            [disabled]="!form.form.valid"
+            [ngClass]="{
+              'contact-form__submit-btn-disabled': !form.form.valid
+            }"
+            type="submit"
+            class="btn btn-primary contact-form__submit-btn"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

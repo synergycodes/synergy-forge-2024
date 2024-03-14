@@ -1,0 +1,24 @@
+<div class="container-fluid mt-2">
+    <div class="card">
+        <div class="card-header">Data bindings</div>
+        <div class="card-body">
+          <h5 class="card-title">How it works</h5>
+          <div class="card-text">
+              <div class="form-group">
+                  <label>Property binding</label>
+                  <input [value]="inputValue" type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                  <label>Two way binding</label>
+                  <input [(ngModel)]="twoWayBinding" type="text" class="form-control" placeholder="Enter text">
+                  <div class="text-success">Entered input text: {{twoWayBinding}}</div>
+              </div>
+              <div class="form-group">
+                  <label>Event binding</label>
+                  <input [(ngModel)]="alertText" type="text" class="form-control">
+                  <button class="btn btn-primary mt-1" (click)='click()'>show alert</button>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>

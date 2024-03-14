@@ -1,0 +1,14 @@
+<div class="child">
+    <div class="font-weight-bold text-info">{{textToClean}}</div>
+    <div>
+      <div class="text-success">List of hobbies</div>
+      <ul *ngFor="let hobby of hobbies; let i = index" class="list-group">
+        <li appGrayListItem [appDate]="hobby.sinceDate" class="list-group-item">
+          <div class="child__list-content">
+            <div class="child__list-item-name">{{hobby.name}}</div>
+            <button (click)="selectHobby(hobby.name)" class="btn btn-success">Select hobby</button>
+          </div>  
+        </li>
+      </ul>
+    </div>
+</div>

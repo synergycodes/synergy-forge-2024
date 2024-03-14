@@ -1,0 +1,10 @@
+.contact-form {
+    &__submit-btn {
+        margin-top: 10px;
+    }
+
+    &__submit-btn-disabled {
+        opacity: 0.2;
+        margin-top: 10px;
+    }
+}

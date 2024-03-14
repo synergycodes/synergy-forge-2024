@@ -1,0 +1,14 @@
+.reactive-form {
+  &__form-buttons {
+    padding-top: 10px;
+    display: flex;
+  }
+
+  &__hobby-button {
+    margin-left: 20px;
+  }
+
+  &__form-button {
+    margin-right: 20px;
+  }
+}

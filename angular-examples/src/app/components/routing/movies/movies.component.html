@@ -1,0 +1,22 @@
+<div class="container-fluid mt-2">
+  <div class="card">
+    <div class="card-header">Movies List</div>
+    <div class="card-body">
+      <div class="card-text">
+        <ul *ngFor="let movie of movies" class="list-group">
+          <li class="list-group-item list-group-item-info">
+            <div class="mr-2">title: {{ movie.title }}</div>
+            <button
+              [routerLink]="[movie.id]"
+              routerLinkActive="router-link-active"
+              class="btn btn-success"
+            >
+              Details
+            </button>
+          </li>
+        </ul>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="container-fluid mt-2">
+    <div class="card">
+        <div class="card-header">Components communication</div>
+        <div class="card-body">
+            <h5 class="card-title">Parent Component</h5>
+            <div class="card-text">
+                <div class="text-primary">Selected hobby name: {{selectedHobbyName}}</div>
+                <div class="text-primary">Child component</div>
+                <div class="mt-2"><button (click)="clearText()" class="btn btn-danger">clear text</button></div>
+                <app-child #childReference [hobbies]="hobbies" (hobbyEmitter)="getSelectedHobby($event)"></app-child>
+            </div>
+        </div>
+    </div>
+</div>

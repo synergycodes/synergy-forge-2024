@@ -1,0 +1,128 @@
+<div class="container-fluid mt-2">
+  <div class="card">
+    <div class="card-header">Contact form - reactive form</div>
+    <div class="card-body">
+      <div class="card-text">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="topic">Topic</label>
+            <input
+              formControlName="topic"
+              type="text"
+              class="form-control"
+              id="topic"
+              placeholder="enter topic"
+            />
+            <div *ngIf="!validTopic" class="text-danger mt-1">
+              Field is required
+            </div>
+          </div>
+          <div class="form-check">
+            <input
+              formControlName="customMessage"
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="customMessage"
+            />
+            <label class="form-check-label" for="customMessage">
+              Custom message
+            </label>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <input
+              formControlName="message"
+              type="text"
+              class="form-control"
+              id="message"
+              placeholder="message"
+            />
+            <div *ngIf="!validMessage" class="text-danger mt-1">
+              We don't like ads
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              formControlName="name"
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="enter your name"
+            />
+            <div *ngIf="!validName" class="text-danger mt-1">
+              Provided name is too short
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input
+              formControlName="email"
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
+            <div *ngIf="!validEmail" class="text-danger mt-1">
+              Provided text is not an email
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="favoriteProgrammingLanguage"
+              >Favorite programming languages</label
+            >
+            <select
+              formControlName="favoriteProgrammingLanguage"
+              class="form-control"
+              id="favoriteProgrammingLanguage"
+            >
+              <option
+                *ngFor="let language of programmingLanguages"
+                [value]="language"
+              >
+                {{ language }}
+              </option>
+            </select>
+            <div *ngIf="showQuestion" class="form-text text-muted">
+              Really ???
+            </div>
+          </div>
+          <div class="form-group" formArrayName="hobbies">
+            <label>Enter hobbies</label>
+            <ng-container *ngFor="let hobby of hobbyControls; let i = index">
+              <input
+                type="text"
+                [formControl]="hobby"
+                class="form-control mt-2"
+              />
+            </ng-container>
+            <button
+              (click)="onAddHobbyClick()"
+              type="button"
+              class="btn btn-success reactive-form__hobby-button"
+            >
+              Add hobby
+            </button>
+          </div>
+          <div class="reactive-form__form-buttons">
+            <button
+              type="submit"
+              class="btn btn-primary reactive-form__form-button"
+            >
+              Submit
+            </button>
+            <button
+              type="button"
+              (click)="onReset()"
+              class="btn btn-danger reactive-form__form-button"
+            >
+              Reset
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <button #fillBtn type="button" class="btn mt-2 btn-info">Fill Form</button>
+</div>
