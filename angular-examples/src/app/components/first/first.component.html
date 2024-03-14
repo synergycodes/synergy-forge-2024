@@ -1,0 +1,21 @@
+<div class="container-fluid mt-2">
+  <div class="card">
+    <div class="card-header">First component</div>
+    <div class="card-body">
+      <h5 class="card-title">My hobbies</h5>
+      <div class="card-text">
+        <p class="text-info">Value: {{ name | uppercase }}</p>
+        <p class="text-primary">Age: {{ age }}</p>
+        <ul *ngIf="hobbies.length > 0; else noHobbies" class="list-group">
+          <ng-container *ngFor="let hobby of hobbies">
+            <li class="list-group-item list-group-item-info">{{ hobby }}</li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noHobbies>
+  <p class="text-danger">No hobbies</p>
+</ng-template>
