@@ -1,0 +1,10 @@
+@if (url$ | async; as url) {
+    <div class="px-4 py-3 bg-gray-200">
+        <h3 class="font-semibold mb-2">
+            {{ description[url].title }}
+        </h3>
+        <p class="text-sm">
+            {{ description[url].content }}
+        </p>
+    </div>
+}

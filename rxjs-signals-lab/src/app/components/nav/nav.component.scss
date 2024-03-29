@@ -1,0 +1,27 @@
+nav {
+    @apply
+    bg-purple-900
+    text-white
+    flex
+    justify-evenly;
+
+    a {
+        @apply
+        px-2
+        py-4
+        flex-1
+        text-center
+        cursor-pointer;
+
+        &:hover {
+            @apply
+            bg-purple-800;
+        }
+
+        &.active {
+            @apply
+            bg-purple-800
+            font-semibold;
+        }
+    }
+}

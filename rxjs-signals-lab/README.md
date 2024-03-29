@@ -1,27 +1,33 @@
-# RxjsSignalsLab
+# Synergy Forge 2024
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
+## Wymagania
 
-## Development server
+- IDE ([Visual Studio Code](https://code.visualstudio.com/), Webstorm etc.)
+  - W przypadku VS Code warto zainstalować extension **Angular Language Service**
+- [Git](https://git-scm.com/downloads)
+- [Node.js](https://nodejs.org/en/download) 
+- Angular CLI ```npm i -g @angular/cli@latest```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Uruchomienie projektu
 
-## Code scaffolding
+```
+git clone git@github.com:synergycodes/synergy-forge-2024.git
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+cd synergy-forge-2024/rxjs-signals-lab
 
-## Build
+npm install
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+ng serve -o
+```
 
-## Running unit tests
+## Zadania
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Zadanie 1
 
-## Running end-to-end tests
+### Zadanie 2
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Zadanie 3
 
-## Further help
+### Zadanie 4
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Zadanie 5
