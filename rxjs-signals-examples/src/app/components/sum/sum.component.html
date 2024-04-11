@@ -1,0 +1,80 @@
+<!-- Rozwiązanie 0 -->
+
+<!-- <label> Pierwsza liczba: </label>
+<input type="number" [(ngModel)]="valueA" />
+
+<label> Druga liczba: </label>
+<input type="number" [(ngModel)]="valueB" />
+
+<p> Suma liczb: {{ sum }} </p> -->
+
+<!-- Rozwiązanie 1 -->
+
+<!-- <label> Pierwsza liczba: </label>
+<input type="number" [(ngModel)]="valueA" />
+
+<label> Druga liczba: </label>
+<input type="number" [(ngModel)]="valueB" />
+
+<p> Suma liczb: {{ getSum() }} </p>  -->
+
+<!-- Rozwiązanie 2 -->
+
+<!-- <label> Pierwsza liczba: </label>
+<input
+    type="number"
+    [ngModel]="valueA"
+    (ngModelChange)="setValueA($event)"
+/>
+
+<label> Druga liczba: </label>
+<input
+    type="number"
+    [ngModel]="valueB"
+    (ngModelChange)="setValueB($event)"
+/>
+
+<p> Suma liczb: {{ sum }} </p> -->
+
+<!-- Rozwiązanie 3 -->
+
+<!-- <label> Pierwsza liczba: </label>
+<input
+    type="number"
+    [ngModel]="valueA"
+    (ngModelChange)="valueA.next($event)"
+/>
+
+<label> Druga liczba: </label>
+<input
+    type="number"
+    [ngModel]="valueB"
+    (ngModelChange)="valueB.next($event)"
+/>
+
+<p> Suma liczb: {{ sum$ | async }} </p> -->
+
+<!-- Rozwiązanie 4 -->
+
+<div>
+    <label class="mr-2 text-lg font-medium"> Pierwsza liczba: </label>
+    <input
+        class="border-gray-400 border-[1px] rounded-md px-4 py-2 mb-4 w-96"
+        type="number"
+        [(ngModel)]="valueA"
+    />
+</div>
+
+<div>
+    <label class="mr-7 text-lg font-medium"> Druga liczba: </label>
+    <input
+        class="border-gray-400 border-[1px] rounded-md px-4 py-2 mb-4 w-96"
+        type="number"
+        [(ngModel)]="valueB"
+    />
+</div>
+
+<div class="flex gap-4">
+    <p class="text-lg font-medium"> Suma liczb: </p> 
+    <p class="text-lg font-bold text-green-500 ml-8"> {{ sum() }} </p> 
+</div>
