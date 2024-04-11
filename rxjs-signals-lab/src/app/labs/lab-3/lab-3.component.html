@@ -1,1 +1,21 @@
-<p>lab-3 works!</p>
+<!-- Pozostaw plik bez zmian :) -->
+
+<button
+    class="px-4 py-2 bg-green-600 rounded-md text-white hover:bg-green-400"
+    (click)="showNotification()"
+>
+    Wyświetl notyfikację
+</button>
+
+<div class="absolute bottom-4 right-4">
+    @for(notification of notifications$ | async; track notification.id) {
+        <div class="mb-2 p-6 shadow-md bg-white rounded-md">
+            <p class="font-bold text-xl mb-2 text-green-500 w-64 z-10">
+                Brawo !
+            </p>
+            <p class="text-gray-800 text-lg">
+                {{ notification.message }}
+            </p>
+        </div>
+    }
+</div>

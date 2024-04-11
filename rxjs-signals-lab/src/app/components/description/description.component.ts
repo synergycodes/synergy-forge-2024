@@ -11,7 +11,6 @@ import { DESCRIPTION } from './description.consts';
   standalone: true,
   imports: [AsyncPipe],
   templateUrl: './description.component.html',
-  styleUrl: './description.component.scss'
 })
 export class DescriptionComponent implements OnInit {
   private router = inject(Router);

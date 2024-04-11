@@ -1,1 +1,26 @@
-<p>lab-4 works!</p>
+<!-- Pozostaw plik bez zmian :) -->
+
+<label class="text-lg font-medium block mb-4">
+    Wpisz kwotę w dolarach $:
+</label>
+
+<input
+    class="border-gray-400 border-[1px] rounded-md px-4 py-2 mb-4 w-96"
+    [(ngModel)]="amount"
+/>
+
+<h3 class="text-lg font-medium block mb-4">
+    Przelicznik walut (stan na 11.04.2024):
+</h3>
+
+<div class="flex flex-col gap-4">
+    <div class="flex gap-2">
+        <p class="font-medium">Euro:</p>
+        <p>{{ euro() | number: '1.2-2' }} €</p>
+    </div>
+    
+    <div class="flex gap-2">
+        <p class="font-medium">PLN:</p>
+        <p>{{ pln() | number: '1.2-2' }} zł</p>
+    </div>
+</div>
