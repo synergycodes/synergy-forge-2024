@@ -19,11 +19,11 @@ export class Lab3Component implements OnInit {
 
   ngOnInit(): void {
     // Wskazówka 1: Znajdź w NotificationService wartość Subject'a którą trzeba podpiąć do zmiennej (żeby dokonać subskrypcji przez AsyncPipe)
-
+    this.notifications$ = this.notificationService.notifications$;
   }
 
   showNotification(message: string = 'Notyfikacja działa :)'): void {
     // Wskazówka 2: Znajdź w NotificationService metode przekazującą wartość do Subject'a
-    
+    this.notificationService.addNotification(message);
   }
 }

@@ -7,7 +7,7 @@ import { CLUB_OPTIONS } from '../../consts/club-options.const';
 import { CountryPipe } from '../../pipes/country.pipe';
 import { ClubPipe } from '../../pipes/club.pipe';
 import { AsyncPipe } from '@angular/common';
-import { Observable, of } from 'rxjs';
+import { Observable, combineLatest, of, startWith, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-lab-5',
@@ -33,6 +33,12 @@ export class Lab5Component implements OnInit {
   ngOnInit(): void {
     // Wskazówka 1: użyj RxJs combineLatest() do subskrypcji obu controli i RxJs switchMap() do przypisania wyniku do footballers$
     // Wskazówka 2 (opcjonalnie): użyj RxJs startWith() przy subskrypcji do valueChanges
+
+    const clubId$ = this.clubControl.valueChanges.pipe(startWith(this.clubControl.value));
+    const countryId$ = this.countryControl.valueChanges.pipe(startWith(this.countryControl.value));
+
+    this.footballers$ = combineLatest({ clubId: clubId$, countryId: countryId$ })
+      .pipe(switchMap(({ clubId, countryId }) => this.getFootballersByClubAndCountry(clubId, countryId)));
   }
 
   // Fake API Request - zwraca Observable

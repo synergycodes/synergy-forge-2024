@@ -1,6 +1,6 @@
 import { Component, DestroyRef, OnInit, inject } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { Observable, map } from 'rxjs';
+import { Observable, map, startWith } from 'rxjs';
 import { Footballer } from '../../interfaces/footballer.interface';
 import { AsyncPipe, TitleCasePipe } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -25,9 +25,9 @@ export class Lab2Component implements OnInit {
     this.results$ = this.searchControl.valueChanges
       .pipe(
         // Wskazówka 1: użyj operatora RxJs startWith()
-
+        startWith(this.searchControl.value),
         // Wskazówka 2: użyj operatora RxJs map() i metody toUpperCase()
-
+        map(value => value.toUpperCase()),
         // Pozostaw bez zmian :)
         map((searchValue) => this.getResults(searchValue)),
         takeUntilDestroyed(this.destroyRef),
