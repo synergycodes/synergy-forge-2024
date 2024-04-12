@@ -1,1 +1,37 @@
-<p>lab-5 works!</p>
+<label class="text-lg font-medium block mb-4">
+    Kraj:
+</label>
+
+<select
+    [formControl]="countryControl"
+    class="border-gray-400 border-[1px] rounded-md px-4 py-2 mb-4 w-96"
+>
+    <option [value]=""></option>
+    @for (country of countryOptions; track country.value) {
+        <option [value]="country.value">{{ country.label }}</option>
+    }
+</select>
+
+<label class="text-lg font-medium block mb-4">
+    Klub:
+</label>
+
+<select
+    [formControl]="clubControl"
+    class="border-gray-400 border-[1px] rounded-md px-4 py-2 mb-4 w-96"
+>
+    <option [value]=""></option>
+    @for (club of clubOptions; track club.value) {
+        <option [value]="club.value">{{ club.label }}</option>
+    }
+</select>
+
+<h3 class="text-lg font-medium mb-2">
+    Wyniki ({{ (footballers$ | async)?.length || 0 }}):
+</h3>
+
+@for (footballer of footballers$ | async; track footballer.id) {
+    <div class="shadow-md px-3 py-2 mb-2">
+        {{ footballer.name }} ({{ footballer.countryId | country }} | {{ footballer.clubId | club }})
+    </div>
+}

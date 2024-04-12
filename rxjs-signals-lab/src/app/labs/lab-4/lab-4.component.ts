@@ -1,5 +1,5 @@
 import { DecimalPipe } from '@angular/common';
-import { Component, Signal, signal } from '@angular/core';
+import { Component, Signal, WritableSignal, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -13,7 +13,7 @@ export class Lab4Component {
   readonly DOLAR_EURO_EXCHANGE_RATE = 0.93;
   readonly DOLAR_PLN_EXCHANGE_RATE = 3.97;
 
-  amount: Signal<number> = signal(0);
+  amount: WritableSignal<number> = signal(0);
 
   // Wskazówka 1: zastąp signal(0) poniżej przez computed() i dodaj wewnątrz formułe przeliczającą kurs walut
 
