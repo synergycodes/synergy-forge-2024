@@ -1,0 +1,54 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@synergy-forge/api/categories": [
+        "libs/api/categories/src/index.ts"
+      ],
+      "@synergy-forge/api/category-items": [
+        "libs/api/category-items/src/index.ts"
+      ],
+      "@synergy-forge/api/database": [
+        "libs/api/database/src/index.ts"
+      ],
+      "@synergy-forge/api/integrations": [
+        "libs/api/integrations/src/index.ts"
+      ],
+      "@synergy-forge/api/versions": [
+        "libs/api/versions/src/index.ts"
+      ],
+      "@synergy-forge/api/core": [
+        "libs/api/core/src/index.ts"
+      ],
+      "@synergy-forge/frontend/core": [
+        "libs/frontend/core/src/index.ts"
+      ],
+      "@synergy-forge/frontend/integrations": [
+        "libs/frontend/integrations/src/index.ts"
+      ],
+      "@synergy-forge/shared/data-access": [
+        "libs/shared/data-access/src/index.ts"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
+}

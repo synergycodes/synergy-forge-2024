@@ -1,0 +1,7 @@
+<ng-container *ngFor="let integration of integrations$ | async">
+  <synergy-forge-integration-item
+    [integration]="integration"
+    [routerLink]="['integration/', integration.id]"
+    class="list-item"
+  ></synergy-forge-integration-item>
+</ng-container>
